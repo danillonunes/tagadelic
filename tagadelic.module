@@ -322,9 +322,10 @@ function theme_tagadelic_weighted(array $vars) {
   $output = '';
 
   foreach ($terms as $term) {
+    $vocabulary = taxonomy_vocabulary_load($term->vid);
     $output .= l($term->name, 'taxonomy/term/' . $term->tid, array(
       'attributes' => array(
-        'class' => array("tagadelic", "level" . $term->weight, "voc-" . $term->vid),
+        'class' => array("tagadelic", "level" . $term->weight, "voc-" . $term->vid, "voc-" . $vocabulary->machine_name),
         'rel' => 'tag',
         'title'  => $term->description,
         )
