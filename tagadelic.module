@@ -324,7 +324,7 @@ function theme_tagadelic_weighted(array $vars) {
   foreach ($terms as $term) {
     $output .= l($term->name, 'taxonomy/term/' . $term->tid, array(
       'attributes' => array(
-        'class' => array("tagadelic", "level" . $term->weight),
+        'class' => array("tagadelic", "level" . $term->weight, "voc-" . $term->vid),
         'rel' => 'tag',
         'title'  => $term->description,
         )
